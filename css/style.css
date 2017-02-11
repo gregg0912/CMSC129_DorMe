@@ -61,6 +61,10 @@
 	animation-duration: 1.5s;
 }
 
+.current {
+	background-color: #717171;
+}
+
 @-webkit-keyframes fade{
 	from {opacity: .4}
 	to {opacity: 1}
