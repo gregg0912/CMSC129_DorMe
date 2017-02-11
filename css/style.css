@@ -1,12 +1,14 @@
 #establishments{
-	max-width: 100%;
+	max-width: 1000px;
 	position: relative;
 	margin: auto;
 }
 .estab{
 	display: none;
 }
-
+.estab > a > img{
+	width: 100%;
+}
 .prev, .next{
 	cursor: pointer;
 	position: absolute;

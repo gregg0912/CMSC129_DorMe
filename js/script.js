@@ -1,26 +1,21 @@
-$(document).ready(function(){
-	$(document).on("click", ".prev", plusSlides);
-	$(document).on("click", ".next", plusSlides);
-});
-var slideIndex = 1;
-showSlides(slideIndex);
+var slideIndex = 0;
+showSlides();
 
-function showSlides(n){
+function showSlides(){
 	var i;
-	var slides = $(document).getElementByClassName("estab");
-	var dots = $(document).getElementByClassName("dot");
-	if(n > slides.length){
-		slideIndex = 1;
-	}
-	if(n < 1){
-		slideIndex = slides.length;
-	}
-	for(i = 0 ; i < slides.length ; i++){
+	var slides = document.getElementByClassName("estab");
+	var dots = document.getElementByClassName("dot");
+	for (i = 0; i < slides.length; i++) {
 		slides[i].style.display = "none";
 	}
-	for(i = 0 ; i < dots.length ; i++){
-		dots[i].className = dots[i].className.replace(" active","");
+	slideIndex++;
+	if(slideIndex > slides.length){
+		slideIndex = 1;
 	}
-	slides[slideIndex-1].style.display = "block";
-	dots[slideIndex-1].className += " active";
+	for(i = 0 ; i < dots.length ; i++){
+		dots[i].className = dots[i].className.replace(" active", "");
+	}
+	slides[slideIndex - 1].style.display = "block";
+	dots[slideIndex - 1].className += "current";
+	setTimeout(showSlides, 3000);
 }
